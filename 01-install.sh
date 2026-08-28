@@ -14,22 +14,24 @@ do
         --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=roboshop-$instance}]" \
         --query 'Instances[0].InstanceId' \
         --output text
-        )
+    )
+
+    echo "instance_ID:$INSTANCE_ID"
     if [ $instance == frontend ]; then
         IP=$(aws ec2 describe-instances \
         --instance-ids $INSTANCE_ID \
         --query "Reservations[*].Instances[*].PublicIpAddress" \
         --output text)
-        R53_RECORD=$DOMAIN_NAME
+    R53_RECORD=$DOMAIN_NAME
     else
         IP=$(aws ec2 describe-instances \
         --instance-ids $INSTANCE_ID \
         --query "Reservations[*].Instances[*].PrivateIpAddress" \
         --output text)
-        R53_RECORD=$instance.$DOMAIN_NAME
+    R53_RECORD=$instance.$DOMAIN_NAME
     fi
-### Updating R53 Records ###
 
+### updating R53 Records ###
  aws route53 change-resource-record-sets \
     --hosted-zone-id $ZONE_ID \
     --change-batch '
