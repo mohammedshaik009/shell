@@ -1,8 +1,8 @@
 #!/bin/bash
 
-AMI_ID="0220d79f3f480ecf5"
-ZONE_ID="Z083970011QGFE38SJQH9"
-DOMAIN_NAME="mohammed.world"
+AMI_ID=0220d79f3f480ecf5
+ZONE_ID=Z083970011QGFE38SJQH9
+DOMAIN_NAME=mohammed.world
 
 for instance in $@
 do
@@ -14,9 +14,7 @@ do
         --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=roboshop-$instance}]" \
         --query 'Instances[0].InstanceId' \
         --output text
-            )
-    echo "instance_ID:$INSTANCE_ID"
-
+        )
     if [ $instance == frontend ]; then
         IP=$(aws ec2 describe-instances \
         --instance-ids $INSTANCE_ID \
@@ -30,9 +28,9 @@ do
         --output text)
         R53_RECORD=$instance.$DOMAIN_NAME
     fi
+### Updating R53 Records ###
 
-### updating R53_RECORD ###
-    aws route53 change-resource-record-sets \
+ aws route53 change-resource-record-sets \
     --hosted-zone-id $ZONE_ID \
     --change-batch '
             {
