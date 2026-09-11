@@ -11,12 +11,13 @@ N="\e[0m"
 if [ $# -lt 2 ]; then
     echo "ERROR :: at least 2 arguments required"
     echo "usage: $0 create/delete [instance1] [instance2]..."
+    exit 1
 fi
 
 ACTION=$1
 shift #first argument will be removes
 
-if [ "$ACTION" != "create" ] && [ "$ACTION" != "delete"]; then
+if [ "$ACTION" != "create" ] && [ "$ACTION" != "delete" ]; then
     echo -e "$R ERROR:: First argument must be either create or delete $N"
     echo "usage: $0 create/delete [instance1] [instance2]..."
     exit 1
