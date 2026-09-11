@@ -1,6 +1,6 @@
 #!/bin/bash
 
-AMI_ID="0220d79f3f480ecf5"
+AMI_ID="ami-0220d79f3f480ecf5"
 ZONE_ID="Z083970011QGFE38SJQH9"
 DOMAIN_NAME=mohammed.world
 R="\e[31m"
