@@ -10,6 +10,6 @@ if [ -z $SOURCE_DIR ]; then
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
-    echo "ERROR:: $SOURCE_DIR does not exist"
+    echo "ERROR:: file $SOURCE_DIR does not exist"
     exit 1
 fi
