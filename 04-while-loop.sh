@@ -2,5 +2,5 @@
 
 while IFS= read -r line
 do
-echo $line
-done < 02-install.sh
+echo "line is $line"
+done <03-install.sh
