@@ -10,7 +10,11 @@ if [ -z $SOURCE_DIR ]; then
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
-    echo "ERROR:: file $SOURCE_DIR does not exist"
+    echo "ERROR:: directory $SOURCE_DIR does not exist"
     exit 1
 fi
 echo "scanning $SOURCE_DIR for log files older than 14 days"
+if [ -z $SOURCE_DIR ]; then
+    echo "no log files older than 14 days"
+    exit 0
+fi
