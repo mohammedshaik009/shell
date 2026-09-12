@@ -13,3 +13,5 @@ if [ ! -d $SOURCE_DIR ]; then
     echo "ERROR:: directory does not exist"
     exit 1
 fi
+
+echo "scanning $SOURCE_DIR for log files older than 14 days"
