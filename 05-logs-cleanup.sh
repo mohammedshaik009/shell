@@ -10,6 +10,9 @@ if [ -z $SOURCE_DIR ]; then
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
-    echo "directory does not exist"
+    echo "ERROR::directory does not exist"
     exit 1
 fi
+
+echo "scanning $SOURCE_DIR for no log files older 14 days"
+FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
