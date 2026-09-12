@@ -21,3 +21,10 @@ if [ -z "$FILES" ]; then
     echo "no log files older than 14 days found"
     exit 0
 fi
+
+while IFS= read -r FILE
+do
+    echo "FILES to be deleted:$FILE"
+    rm -f $FILE
+    echo "FIle: $FILE deleted"
+done <<< $FILES
