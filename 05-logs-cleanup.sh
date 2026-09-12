@@ -9,3 +9,7 @@ if [ -z $SOURCE_DIR ]; then
     exit 1
 fi
 
+if [ ! -d $SOUCRE_DIR ]; then
+    echo "ERROR:: directory does not exist"
+    exit 1
+fi
