@@ -8,4 +8,8 @@ if [ -z $SOURCE_DIR ]; then
     echo "USAGE:: $0 <source_dir> [days(optional default to 14)]"
     exit 1
 fi
- 
+
+if [ ! -d $SOURCE_DIR ]; then
+    echo "ERROR:: $SOURCE_DIR does not exist"
+    exit 1
+fi
