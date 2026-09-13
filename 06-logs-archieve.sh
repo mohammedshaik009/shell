@@ -35,14 +35,14 @@ fi
 TIMESTAMP=$(date "+%Y-%m-%d %H-%M-%S")
 ARCHEIVE_FILE="$DEST_DIR/logs-archieve-$TIMESTAMP.tar.gz"
 
-tar -czvf "$ARCHEIVE_FILE" "$FILES"
+tar -czvf "$ARCHEIVE_FILE" $FILES
 
 if [ $? -eq 0 ]; then
     echo "Archeival is success, deleting the files"
     while IFS= read -r FILE
     do 
-        rm -f $FILE
-        echo: "Delete file $FILE"
+        rm -f "$FILE"
+        echo "Delete file $FILE"
     done <<< "$FILES"
 else
     echo "ERROR::archeival is failed"
