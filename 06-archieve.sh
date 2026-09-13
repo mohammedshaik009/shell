@@ -15,7 +15,7 @@ if [ ! -d $SOURCE_DIR ]; then
     exit 1
 fi
 
-if [ ! -d $SOURCE_DIR ]; then
+if [ ! -d $DEST_DIR ]; then
     echo "dest_directory: $DEST_DIR does not exist"
     exit 1
 fi
