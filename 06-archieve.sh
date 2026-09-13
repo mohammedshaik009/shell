@@ -32,7 +32,7 @@ do
     echo "$FILE"
 done <<< "$FILES"
 
-TIMESTAMP=$(date "%Y-%M-%S-%H:%M:%S")
+TIMESTAMP=$(date "%Y-%m-%d-%H:%M:%S")
 ARCHEIVE_FILE=$DEST_DIR-$TIMESTAMP.tar.gz
 
 tar -czvf $ARCHEIVE_FILE $FILES
