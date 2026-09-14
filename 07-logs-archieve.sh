@@ -29,12 +29,12 @@ if [ -z "$FILES" ]; then
 fi
 
 TIMESTAMP=$(date "+%Y-%m-%d %H-%M-%S")
-ARCHIEVE_FILE="$DEST_DIR/logs-archieve-$TIMESTAMP tar.gz"
+ARCHEIVE_FILE="$DEST_DIR/logs-archieve-$TIMESTAMP tar.gz"
 
-tar -czvf "$ARCHIEVE_FILE" $FILES
+tar -czvf "$ARCHEIVE_FILE" $FILES
 
 if [ $? -eq 0 ]; then
-    echo "archieval is success"
+    echo "archeival is success deleting the files"
     while IFS= read -r FILE
         do
             echo "File is $FILE"
