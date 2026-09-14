@@ -31,7 +31,7 @@ fi
 TIMESTAMP=$(date "+%Y-%m-%d %H-%M-%S")
 ARCHIEVE_FILE="$DEST_DIR/logs-archieve $TIMESTAMP tar.gz.log"
 
-tar -czvf "$ARCHIVE_FILE" $FILES
+tar -czvf "$ARCHIEVE_FILE" $FILES
 
 if [ $? -eq 0 ]; then
     echo "archieval is success"
