@@ -22,7 +22,7 @@ fi
 
 FILES=$(find "$SOURCE_DIR" -name "*.log" -type f -mtime +$DAYS)
 
-if [ -z $FILES ]; then
+if [ -z "$FILES" ]; then
     echo "no log files found older than 14 days"
     exit 0
 fi
@@ -39,4 +39,9 @@ if [ $? -eq 0 ]; then
     do
     rm -f "$FILE"
     echo "file $FILE is deleted"
-done <<< "$FILES"
+    done <<< "$FILES"
+else
+    echo "ERROR:Archeival is FAILED"
+    exit 1
+fi
+
