@@ -17,7 +17,7 @@ fi
 echo "scanning for $SOURCE_DIR log files older than 14 days"
 FILES=$( find $SOURCE_DIR -name "*.log" -type f -mtime $DAYS )
 
-if [ -z $FILES ]; then
+if [ -z "$FILES" ]; then
     echo "no log files found older than 14 days"
     exit 0
 fi
@@ -26,4 +26,4 @@ while IFS= read -r FILE
 do
     echo "File is $FILE"
 
-done <<<$FILES
+done <<<"$FILES"
