@@ -24,7 +24,7 @@ fi
 
 while IFS= read -r FILE
 do
-    echo "file is $FILE"
+    echo "file $FILE to be deleted"
     rm -f "$FILE"
     echo "file $FILE deleted"
 done <<< "$FILES"
