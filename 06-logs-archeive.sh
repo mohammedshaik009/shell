@@ -28,7 +28,7 @@ if [ -z "$FILES" ]; then
 fi
 
 TIMESTAMP=$(date "+%Y-%m-%d-%H-%M-%S")
-ARCHIVE_FILE="$DEST_DIR/logs-archeive-$TIMESTAMP.tar.gz"
+ARCHIVE_FILE="$DEST_DIR/logs-archive-$TIMESTAMP.tar.gz"
 
 tar -czvf "$ARCHIVE_FILE" $FILES
 
