@@ -10,12 +10,12 @@ if [ -z "$SOURCE_DIR" ] || [ -z "$DEST_DIR" ]; then
     exit 1
 fi
 
-if [ -z "$SOURCE_DIR" ]; then
+if [ ! -d "$SOURCE_DIR" ]; then
     echo "directory $SOURCE_DIR does not exist"
     exit 1
 fi
 
-if [ -z "$DEST_DIR" ]; then
+if [ ! -d "$DEST_DIR" ]; then
     echo "directory $DEST_DIR does not exist"
     exit 1
 fi
