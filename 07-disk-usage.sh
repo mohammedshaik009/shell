@@ -1,10 +1,9 @@
 #!/bin/bash
 
-#!/bin/bash
-
 DISK_USAGE=$(df -HT | grep -v Filesystem)
+USAGE_THRESHOLD=10
 
 while IFS= read -r line
-do
+    do
     echo $line
-done <<< "$DISK_USAGE"
+done <<< $DISK_USAGE
