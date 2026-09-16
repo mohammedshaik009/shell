@@ -13,4 +13,4 @@ while IFS= read -r line
         fi 
     done <<< "$DISK_USAGE"
 
-    echo "$MESSAGE"
+    echo -e "$MESSAGE"
