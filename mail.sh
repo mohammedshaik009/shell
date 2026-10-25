@@ -1,0 +1,10 @@
+#!/bin/bash
+
+TO_TEAM=$1
+ALERT_TYPE=$2
+SERVER_IP=$3
+MESSAGE=$4
+TO_ADDRESS=$5
+SUBJECT=$6
+
+FINAL_BODY=$(sed )
